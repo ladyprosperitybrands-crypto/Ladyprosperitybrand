@@ -253,3 +253,20 @@ footer {
     width: 100%;
   }
 }
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #ffffff;
+  color: #4b5563;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
+
+.site-footer .footer-note {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+  letter-spacing: 0.03em;
+}
