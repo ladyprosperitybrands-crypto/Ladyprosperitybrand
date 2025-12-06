@@ -270,3 +270,22 @@ footer {
   margin-top: 0.25rem;
   letter-spacing: 0.03em;
 }
+/* Social Icons */
+.social-icons {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  color: #059669;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.12);
+  color: #047857;
+}
