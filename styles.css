@@ -300,3 +300,44 @@ footer {
 .social-btn:hover img {
   opacity: 0.7;
 }
+/* Footer Social Icon */
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-link {
+  text-decoration: none;
+}
+
+/* Instagram icon container */
+.ig-icon {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ig-svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* Mint + Gold */
+.ig-bg {
+  fill: #8CE3C0;
+}
+
+.ig-camera,
+.ig-lens,
+.ig-dot {
+  fill: #d9a441;
+}
+
+/* Hover effect */
+.social-link:hover .ig-svg {
+  transform: scale(1.08);
+  transition: transform 0.18s ease;
+}
