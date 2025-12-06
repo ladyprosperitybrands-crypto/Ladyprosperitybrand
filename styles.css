@@ -183,10 +183,10 @@ nav a:hover {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1.25rem;
-  max-width: 900px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: start;
 }
 
 .product-card {
