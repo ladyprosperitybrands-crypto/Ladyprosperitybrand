@@ -580,3 +580,85 @@ footer {
   transform: scale(1.08);
   transition: transform 0.18s ease;
 }
+/* ---------- Custom Orders Section ---------- */
+
+.custom-section {
+  background: #f9fafb;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.custom-section h2 {
+  text-align: center;
+  margin: 0 0 1.75rem;
+}
+
+.custom-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .custom-grid {
+    grid-template-columns: 1.05fr 1.4fr;
+  }
+}
+
+.info-card,
+.form-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.info-card h3,
+.form-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.custom-note {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+}
+
+.form-card label {
+  display: block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.6rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  outline: none;
+  border-color: #059669;
+  box-shadow: 0 0 0 1px rgba(5, 150, 105, 0.3);
+}
+
+.form-card textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.price-note {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: #6b7280;
+  font-style: italic;
+}
