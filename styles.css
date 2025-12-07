@@ -1,33 +1,42 @@
-/* Global */
-* {
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
+  margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #fdfdfd;
   color: #111827;
-  line-height: 1.6;
+  background: #f9fafb;
 }
 
-/* Simple layout helpers */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Layout ---------- */
+
 section {
   padding: 3rem 1.5rem;
 }
 
-.products {
-  padding-top: 3rem;
-  padding-bottom: 3.5rem;
+@media (min-width: 768px) {
+  section {
+    padding: 4rem 2.5rem;
+  }
 }
 
-/* Header */
+/* ---------- Header ---------- */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.5rem;
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   position: sticky;
@@ -35,45 +44,275 @@ header {
   z-index: 20;
 }
 
-.logo {
-  font-weight: 700;
+@media (min-width: 768px) {
+  header {
+    padding-inline: 2.5rem;
+  }
+}
+
+h1.logo {
+  font-size: 1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.95rem;
+  color: #111827;
 }
 
 nav a {
   margin-left: 1rem;
-  text-decoration: none;
-  color: #4b5563;
   font-size: 0.9rem;
+  text-decoration: none;
+  color: #374151;
 }
 
 nav a:hover {
   color: #059669;
 }
 
-/* Hero */
+/* ---------- Hero ---------- */
+
 .hero {
+  background: linear-gradient(135deg, #ecfdf5, #e0f2fe);
   text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 3.5rem;
-  background: radial-gradient(circle at top left, #ecfdf5, #ffffff);
 }
 
 .hero h2 {
-  font-size: 1.9rem;
-  margin-bottom: 0.75rem;
-}
-
-.tag {
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.7rem;
-  color: #6b7280;
+  font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
 
+.hero .tag {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.hero .sub {
+  max-width: 32rem;
+  margin: 0.75rem auto 1.5rem;
+  color: #4b5563;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn.primary {
+  background: #059669;
+  color: white;
+  box-shadow: 0 10px 25px rgba(5, 150, 105, 0.25);
+}
+
+.btn.outline {
+  background: white;
+  color: #059669;
+  border-color: #bbf7d0;
+}
+
+.btn.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+/* ---------- Featured Set ---------- */
+
+.feature {
+  background: #ffffff;
+  padding-block: 2.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.feature-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+  background: #f9fafb;
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+}
+
+.feature h3 {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-top: 0;
+}
+
+.feature h3::before {
+  content: "✴ ";
+}
+
+.feature h2 {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.feature .desc {
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.feature .price {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+/* ---------- Products Section ---------- */
+
+.products {
+  background: #f9fafb;
+}
+
+.products h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.products .sub {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #4b5563;
+}
+
+/* grid with NO fixed height */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ---------- Product Card ---------- */
+
+.product-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem 1rem 1.2rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card img {
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-card h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.product-card p {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.product-card .price-line {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.product-card .btn-row {
+  margin-top: auto;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  padding: 1.75rem 1.5rem 2.25rem;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.footer-note {
+  margin-top: 0.25rem;
+}
+
+/* ---------- Instagram Icon in Footer ---------- */
+
+.social-icons {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: center;
+}
+
+.social-link {
+  text-decoration: none;
+}
+
+.ig-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.ig-svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* Prosperi mint background */
+.ig-bg {
+  fill: #a5e3cf;
+}
+
+/* Bright metallic gold shapes */
+.ig-camera,
+.ig-lens,
+.ig-dot {
+  fill: #d9a441;
+}
+
+/* tiny sparkle */
+.ig-icon::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #ffffff, #fef3c7);
+  border-radius: 2px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+/* hover */
+.social-link:hover .ig-svg {
+  transform: scale(1.08);
+  transition: transform 0.18s ease;
+}
 .sub {
   color: #4b5563;
   font-size: 0.95rem;
