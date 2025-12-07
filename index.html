@@ -135,7 +135,73 @@
         </div>
     </div>
     </section>
+        <section id="custom-orders" class="custom-section">
+  <h2>Custom Orders & More Coming Soon</h2>
+
+  <div class="custom-grid">
+    <!-- More coming soon box -->
+    <div class="info-card">
+      <h3>More Styles Coming Soon</h3>
+      <p>
+        New stacks, character pens, and faith sets are always on the way.
+        Check back often or send a custom request if you have a special color
+        combo or theme in mind.
+      </p>
+    </div>
+
+    <!-- Custom order form box -->
+    <div class="form-card">
+      <h3>Request a Custom Order</h3>
+      <p class="custom-note">
+        Tell me your colors, theme (faith, character, glam, etc.), and whether you
+        want bracelets, pens, or a set.
+      </p>
+
+      <label for="custom-name">Name</label>
+      <input id="custom-name" type="text" placeholder="First & last name">
+
+      <label for="custom-email">Email</label>
+      <input id="custom-email" type="email" placeholder="you@example.com">
+
+      <label for="custom-details">Custom Order Details</label>
+      <textarea id="custom-details"
+        placeholder="Example: 3-bracelet purple faith stack with cross charms and size 7–7.5 inches."></textarea>
+
+      <p class="price-note">
+        Price for custom orders will be sent in a responding email after I review your request.
+      </p>
+
+      <button type="button" class="btn primary" onclick="sendCustomOrder()">
+        Send Custom Request by Email
+      </button>
+    </div>
+  </div>
+        </section>
             <!-- FOOTER -->
+        <script>
+  function sendCustomOrder() {
+    const name = document.getElementById('custom-name').value.trim();
+    const email = document.getElementById('custom-email').value.trim();
+    const details = document.getElementById('custom-details').value.trim();
+
+    const subject = 'Custom Order Request - Prosperi-Faith';
+
+    let bodyLines = [];
+    if (name)  bodyLines.push('Name: ' + name);
+    if (email) bodyLines.push('Email: ' + email, '');
+    bodyLines.push('Custom order details:');
+    bodyLines.push(details || '(no details typed yet)');
+
+    const body = encodeURIComponent(bodyLines.join('\n'));
+
+    // 👉 change this to your main email if needed
+    const to = 'ladyprosperitybrands@gmail.com';
+
+    window.location.href = 'mailto:' + to +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + body;
+  }
+        </script>
 <!-- FOOTER -->
 <footer class="site-footer">
   <p>© 2025 Lady Prosperity • Prosperi-T3</p>
